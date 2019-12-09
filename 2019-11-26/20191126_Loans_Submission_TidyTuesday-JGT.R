@@ -2,6 +2,7 @@
 library(tidyverse)
 library(tidytuesdayR)
 library(reshape2)
+library(here)
 
 ### Import Data
 tuesdata <- tidytuesdayR::tt_load("2019-11-26")
@@ -40,6 +41,7 @@ names(loans.byagency.melt)[3] <- "percentage"
 # Make ggplot object on melted data set
 loans.byagency.gg <- ggplot (loans.byagency.melt)
 
+
 # Plot for each company the percent repaid with each method
 loans.byagency.gg +
   geom_point(aes(x = agency_name, y = percentage, colour = payment_type)) +
@@ -50,5 +52,7 @@ loans.byagency.gg +
   xlab("Company") +
   ylab("Percentage of Total Dollars Repaid") +
   ggtitle("Percentage of Total Student Loan Debt Repaid \n Voluntary vs Garnishment by Company")
+
+ggsave(here("2019-11-26", "20191126_tidy_tuesday_plot-JGT.png"))
 
 

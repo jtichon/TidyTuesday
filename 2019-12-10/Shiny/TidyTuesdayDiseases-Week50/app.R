@@ -41,7 +41,7 @@ server <- function(input, output) {
 
     output$distPlot <- renderPlot({
         # generate data set for selected year based on input$year from ui.R
-        measles.byyear <- filter(measles, year == input$year)
+        measles.byyear <- filter(measles, year == input$year, is.na(percentage) == FALSE)
 
         # draw the histogram with the specified number of bins
         ggplot(measles.byyear, aes(x = state, y = percentage)) +
