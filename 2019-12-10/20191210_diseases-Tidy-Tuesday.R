@@ -24,3 +24,12 @@ measles <-
 
 #save to .rda
 save(measles, file = "measles.rda")
+
+### For Shiny App by State
+
+#Filter out NA's
+bystate<- diseases %>%
+  filter(is.na(count) == FALSE) %>%
+  select(state, year, count, disease)
+
+save(bystate, file = "bystate.rda")

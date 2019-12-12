@@ -1,0 +1,12 @@
+name: Disease-By-State
+title: Disease-By-State
+username:
+account: jenna-tichon
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 1590829
+bundleId: 2660133
+url: https://jenna-tichon.shinyapps.io/Disease-By-State/
+when: 1576098302.98566
+asMultiple: FALSE
+asStatic: FALSE
